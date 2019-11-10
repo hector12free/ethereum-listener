@@ -5,11 +5,6 @@
 	-webkit-box-sizing: border-box;
 }
 
-@font-face {
-    font-family: bitcoinsymbol;
-    src: url(lib/BTC.ttf);
-}
-
 body {
     position: absolute;
 	width: 100%;
@@ -32,11 +27,6 @@ a {
 	background-image: url('images/background.jpg');
 	font-family: "Times New Roman", Times, serif;
 	position: relative;
-}
-
-.bitcoinsymbol {
-    font-family: bitcoinsymbol;
-    margin: 0 1px;
 }
 
 .interface {
