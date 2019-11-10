@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>BitListen - Bitcoin Transaction Visualizer</title>
-		<meta name="description" content="Realtime Bitcoin transaction visualizer. See and hear new transactions, trades and blocks as they occur.">
-		<meta name="keywords" content="BitListen,Listen To Bitcoin,Bitcoin,transactions,visualizer,trades,mtgox,blockchain">
+		<title>Ethereum Listener</title>
+		<meta name="description" content="Ethereum Listener, a realtime Ethereum transaction visualizer.">
+		<meta name="keywords" content="Ethereum Listener,Listen To Ethereum,Ethereum,transactions,visualizer,blockchain">
 		<meta name="author" content="Maximillian Laumeister">
 		<link rel="author" href="https://plus.google.com/100865127821381452608/posts" />
 		<link rel="stylesheet" type="text/css" href="jquery.nouislider.custom.css">
 		<link rel="stylesheet" type="text/css" href="engine.css">
+		<link rel="icon" type="image/png" href="/images/favicon.png">
 		<!--[if IE]>
 		<link rel="stylesheet" type="text/css" href="ie.css">
 		<![endif]-->
@@ -60,23 +61,20 @@
 	</head>
 	<body>
 		<div id="header" class="serif interface">
-			<div id="rateBox">
+			<div hidden id="rateBox">
 				<span id="rate">---</span> <span id="units">USD / BTC</span><br />
 				<span class="rateButton" id="bitstampRate" onclick="switchExchange('bitstamp');">Bitstamp</span>
 			</div>
-			<img src="images/logo.png" alt="BitListen">
+			
 			<div id="headerInfo">
-				<p>
-					Realtime Bitcoin transaction visualizer. (Formerly 'Listen To Bitcoin').
-				</p>
-				<p>
-					Most donations get highlighted: <span id="donationAddress" qrtarget="bitcoin:1istendqWJ1mKvrdRUQZDL2F3tVDDyKdj">1istendqWJ1mKvrdRUQZDL2F3tVDDyKdj</span>
-					<br />
-					<span id="musicianDonation"></span>
-				</p>
-				<p class="subdued">
-					By <a href="https://www.maxlaumeister.com/">Maximillian Laumeister</a> &bull; <a href="https://www.maxlaumeister.com/contact/">Contact</a> &bull; <a href="https://github.com/MaxLaumeister/bitlisten">Source Code</a>
-				</p>
+					<img src="images/logo.png" style="height: 60px;" align="left" alt="EthereumListener">
+					<div style="margin-left: 80px;">
+						<h2 class="whiteFont">Ethereum Listener</h2>
+						<p class="whiteFont">The Realtime Ethereum transaction visualizer</p>
+						<span class="whiteFont">On donation address: <span id="donationAddress" qrtarget="ethereum:0xf7050c2908b6c1ccdfb2a44b87853bcc3345e3b3">0xf7050c2908b6c1ccdfb2a44b87853bcc3345e3b3</span>
+						<br /><span id="musicianDonation"></span>
+						</span>
+					</div>
 			</div>
 		</div>
 		<table id="pageSplitter" border="0">
@@ -93,7 +91,7 @@
 				<div id="overlay">
 					<div id="connectionStatus" class="monospace">
 						<div id="connectionInnerDiv" class="interface">
-							<p>
+							<p hidden>
 								<label>
 									<input id="blockchainCheckBox" type='checkbox' checked="checked" onchange='this.checked ? TransactionSocket.init() : TransactionSocket.close();'>
 									<span id="blockchainStatus"></span></label>
@@ -117,15 +115,15 @@
 							<p>
 								<label>
 									<input id="scalePitchCheckBox" type='checkbox' checked="checked" onchange='globalScalePitch = this.checked'>
-										Scale pitch with transaction amount<br />(bigger transaction = deeper sound)
+									Scale pitch: bigger transaction = deeper sound
 								</label>
 							</p>
-							<p>
+							<!-- <p>
 								<label class="disabled">
 								    <input id="showDollarCheckBox" type='checkbox' onchange='globalShowDollar = this.checked' disabled="disabled">
 									Show units in USD instead of BTC
 								</label>
-							</p>
+							</p> -->
 						</div>
 
 					</div>
@@ -137,7 +135,12 @@
 			</td>
 			</tr>
 		</table>
-		<div id="hideInterface" class="serif" onclick='toggleInterface()'>[ Hide Interface ]</div>
+		<div id="hideInterface" class="serif" onclick='toggleInterface()'>
+			<span>
+				<a href="https://github.com/hector12free/ethereum-listener">Source Code </a>
+			</span>
+
+		| Hide Interface</div>
 		<div id="noJavascript">
 			<p>
 				Please enable Javascript, or try a different web browser.

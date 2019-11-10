@@ -151,6 +151,10 @@ a {
 	color: yellow;
 }
 
+.whiteFont {
+	color: white;
+}
+
 #rateBox {
 	position: absolute;
 	text-align: left;
