@@ -2,6 +2,8 @@
 
 Ethereum Listener, a realtime Ethereum transaction visualizer written in HTML/Javascript. See and hear new transactions as they propagate through the Ethereum Network.
 
+[![Ethereum Listener](https://img.youtube.com/vi/dEdLSinMk-4/0.jpg)](https://www.youtube.com/watch?v=dEdLSinMk-4)
+
 ### Building ###
 
 1. [Install Node.js](https://nodejs.org/download/).
