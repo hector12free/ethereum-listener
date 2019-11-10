@@ -1,3 +1,5 @@
+var DEV_MODE = true;
+var MATIC_DAGGER = DEV_MODE ? "wss://matic.dagger2.matic.network" : "wss://mainnet.dagger.matic.network";
 var satoshi = 100000000;
 var wei = 10000000000000000000; // 10^18
 // var DONATION_ADDRESS = "0xf7050c2908b6c1ccdfb2a44b87853bcc3345e3b3";
@@ -21,8 +23,8 @@ TransactionSocket.init = function() {
 
 	if ('WebSocket' in window) {
 		var connection = new ReconnectingWebSocket('wss://mainnet.dagger.matic.network');
-		
-		var dagger = new Dagger("wss://mainnet.dagger.matic.network"); // dagger server
+		console.log(MATIC_DAGGER);
+		var dagger = new Dagger(MATIC_DAGGER); // dagger server
 		TransactionSocket.connection = connection;
 
 		StatusBox.reconnecting("blockchain");

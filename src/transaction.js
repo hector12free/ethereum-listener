@@ -12,20 +12,20 @@ function Transaction(bitcoins, highlight, currency, currencyName) {
 		this.addImage(bubbleImage, this.width, this.height);
 	
 	    var bitcoinVal = bitcoins.toFixed(2);
-	    var bitcoinString;
+	    var etherDonation;
 	    
 	    if(globalShowDollar === true) {
-    		bitcoinString = "$" + (bitcoins*globalRate).toFixed(0);
+    		etherDonation = "$" + (bitcoins*globalRate).toFixed(0);
     	} else if (bitcoinVal === "0.00") {
-	        bitcoinString = "&lt;<span class='bitcoinsymbol'>B</span>0.01";
+	        etherDonation = "&lt;<td>Ξ</td>0.01";
 	    } else {
-	        bitcoinString = "<span class='bitcoinsymbol'>B</span>" + bitcoinVal;
+	        etherDonation = "<td>Ξ</td>" + bitcoinVal;
 	    }
 	
 		if (!highlight) {
-			this.addText(bitcoinString);
+			this.addText(etherDonation);
 		} else {
-			this.addText('<span style="color: yellow;">' + bitcoinString + '</span><br /><span style="color: cyan;">Donation</span><br /><span style="color: lime;">Thanks!</span>');
+			this.addText('<span style="color: yellow;">' + etherDonation + '</span><br /><span style="color: cyan;">Donation</span><br /><span style="color: lime;">Thanks!</span>');
 		}
 		if (currency && currencyName) {
 			this.addText('<br />' + currency.toFixed(2) + ' ' + currencyName);
